@@ -1,0 +1,19 @@
+# Chat models
+cyberagent/Mistral-Nemo-Japanese-Instruct-2408
+cyberagent/Llama-3.1-70B-Japanese-Instruct-2407
+cyberagent/DeepSeek-R1-Distill-Qwen-14B-Japanese
+cyberagent/calm3-22b-chat-selfimprove-experimental
+lightblue/karasu-1.1B
+lightblue/qarasu-14B-chat-plus-unleashed
+lightblue/DeepSeek-R1-Distill-Qwen-7B-Japanese
+lightblue/DeepSeek-R1-Distill-Qwen-14B-Multilingual
+elyza/Llama-3-ELYZA-JP-8B
+elyza/ELYZA-Thinking-1.0-Qwen-32B
+
+# TTS models
+ResembleAI/chatterbox
+hexgrad/Kokoro-82M
+eleven labs: https://elevenlabs.io/text-to-speech/japanese
+
+
+# Speech Recognition 

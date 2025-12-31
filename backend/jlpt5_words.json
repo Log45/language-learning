@@ -1,0 +1,328 @@
+[
+  {
+    "kanji": "意味",
+    "hiragana": "いみ",
+    "romaji": "imi",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      },
+      {
+        "text": "noun or participle taking the aux. verb する",
+        "title": "#vs "
+      },
+      {
+        "text": "transitive verb",
+        "title": "#vt "
+      }
+    ],
+    "meanings": [
+      "meaning, significance, sense"
+    ],
+    "jlpt": "N5"
+  },
+  {
+    "kanji": "一つ",
+    "hiragana": "ひとつ",
+    "romaji": "hitotsu",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "irregular okurigana",
+        "title": "#io "
+      },
+      {
+        "text": "numeric",
+        "title": "#num "
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      },
+      {
+        "text": "adverb",
+        "title": "#adv Fukushi adverb coming from adjectives."
+      },
+      {
+        "text": "noun taking the genitive case particle の",
+        "title": "#adj-no Nouns that can be converted into genitive case using the particle の."
+      },
+      {
+        "text": "adjective (generic)",
+        "title": "#adj All kinds of Japanese adjectives"
+      }
+    ],
+    "meanings": [
+      "one",
+      "for one thing",
+      "only",
+      "(not) even",
+      "just (e.g. \"just try it\")",
+      "some kind of, one type of"
+    ],
+    "jlpt": "N5"
+  },
+  {
+    "kanji": "一番",
+    "hiragana": "いちばん",
+    "romaji": "ichiban",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      },
+      {
+        "text": "noun taking the genitive case particle の",
+        "title": "#adj-no Nouns that can be converted into genitive case using the particle の."
+      },
+      {
+        "text": "adjective (generic)",
+        "title": "#adj All kinds of Japanese adjectives"
+      },
+      {
+        "text": "adverb",
+        "title": "#adv Fukushi adverb coming from adjectives."
+      }
+    ],
+    "meanings": [
+      "number one, first, first place",
+      "best, most",
+      "game, round, bout",
+      "as a test, as an experiment, by way of experiment, by way of trial, tentatively",
+      "song (e.g. in noh), piece"
+    ],
+    "jlpt": "N5"
+  },
+  {
+    "kanji": "右",
+    "hiragana": "みぎ",
+    "romaji": "migi",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      },
+      {
+        "text": "noun taking the genitive case particle の",
+        "title": "#adj-no Nouns that can be converted into genitive case using the particle の."
+      },
+      {
+        "text": "adjective (generic)",
+        "title": "#adj All kinds of Japanese adjectives"
+      }
+    ],
+    "meanings": [
+      "right, right-hand side",
+      "right hand",
+      "the above (in a piece of vertical writing), above-mentioned",
+      "the right (wing), rightist",
+      "the better (of two)"
+    ],
+    "jlpt": "N5"
+  },
+  {
+    "kanji": "映画",
+    "hiragana": "えいが",
+    "romaji": "eiga",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "search-only kanji form",
+        "title": "#sK "
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      }
+    ],
+    "meanings": [
+      "movie, film, motion picture"
+    ],
+    "jlpt": "N5"
+  },
+  {
+    "kanji": "音楽",
+    "hiragana": "おんがく",
+    "romaji": "ongaku",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "search-only kanji form",
+        "title": "#sK "
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      }
+    ],
+    "meanings": [
+      "music"
+    ],
+    "jlpt": "N5"
+  },
+  {
+    "kanji": "夏",
+    "hiragana": "なつ",
+    "romaji": "natsu",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      },
+      {
+        "text": "adverb",
+        "title": "#adv Fukushi adverb coming from adjectives."
+      }
+    ],
+    "meanings": [
+      "summer"
+    ],
+    "jlpt": "N5"
+  },
+  {
+    "kanji": "家族",
+    "hiragana": "かぞく",
+    "romaji": "kazoku",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      }
+    ],
+    "meanings": [
+      "family"
+    ],
+    "jlpt": "N5"
+  },
+  {
+    "kanji": "家庭",
+    "hiragana": "かてい",
+    "romaji": "katei",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      }
+    ],
+    "meanings": [
+      "home, household, family, hearth"
+    ],
+    "jlpt": "N5"
+  },
+  {
+    "kanji": "花",
+    "hiragana": "はな",
+    "romaji": "hana",
+    "badges": [
+      {
+        "text": "popular",
+        "title": "#popular Words commonly used in modern Japanese"
+      },
+      {
+        "text": "noun",
+        "title": "#n "
+      },
+      {
+        "text": "noun (generic)",
+        "title": "#noun All kinds of Japanese nouns"
+      },
+      {
+        "text": "abbreviation",
+        "title": "#abbr An abbreviation is a shorter way to write a word or phrase."
+      },
+      {
+        "text": "hanafuda",
+        "title": "#hanaf Words related with the cards of hanafuda"
+      },
+      {
+        "text": "noun taking the genitive case particle の",
+        "title": "#adj-no Nouns that can be converted into genitive case using the particle の."
+      },
+      {
+        "text": "adjective (generic)",
+        "title": "#adj All kinds of Japanese adjectives"
+      }
+    ],
+    "meanings": [
+      "flower, blossom, bloom, petal",
+      "cherry blossom",
+      "beauty",
+      "blooming (esp. of cherry blossoms)",
+      "ikebana",
+      "hanafuda",
+      "(the) best",
+      "glorious, lovely"
+    ],
+    "jlpt": "N5"
+  }
+]
