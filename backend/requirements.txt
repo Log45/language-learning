@@ -3,4 +3,19 @@ requests
 beautifulsoup4
 lxml
 
+# Backend / ML / LangChain dependencies
+transformers
+huggingface-hub
+torch
+jq
 
+# LangChain-related packages used in the code
+langchain
+langchain-openai
+langchain-community
+langchain-huggingface
+langchain-core
+
+# FastAPI for the HTTP server
+fastapi
+uvicorn # uvicorn may or may not be necessary depending on deployment method
