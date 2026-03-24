@@ -19,3 +19,8 @@ langchain-core
 # FastAPI for the HTTP server
 fastapi
 uvicorn # uvicorn may or may not be necessary depending on deployment method
+
+# PostgreSQL
+psycopg2-binary
+sqlalchemy
+python-dotenv

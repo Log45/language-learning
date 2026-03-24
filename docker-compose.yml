@@ -10,7 +10,8 @@ services:
       POSTGRES_DB: language_app
 
     ports:
-      - "5432:5432"
+      # Host 5432 often conflicts with a local Postgres install; use 5433 on the host.
+      - "5433:5432"
 
     volumes:
       - postgres_data:/var/lib/postgresql

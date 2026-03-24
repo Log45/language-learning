@@ -47,4 +47,5 @@ class Word(Base):
     kanji_chars: Mapped[list["Kanji"]] = relationship(
         secondary="word_kanji",
         back_populates="words",
+        order_by="WordKanji.position",
     )

@@ -19,15 +19,15 @@ class Kanji(Base):
     kunyomi: Mapped[list[str]] = mapped_column(ARRAY(String))
 
     words: Mapped[list["Word"]] = relationship(
-        secondary="word_kanji", back_populates="kanji_chars"
+        secondary="word_kanji",
+        back_populates="kanji_chars",
     )
 
 
 class WordKanji(Base):
     __tablename__ = "word_kanji"
 
+    # (word_id, position) allows the same kanji twice in one word (e.g. 馴れ馴れしい).
     word_id: Mapped[int] = mapped_column(ForeignKey("words.id"), primary_key=True)
-    kanji_character: Mapped[str] = mapped_column(
-        ForeignKey("kanji.character"), primary_key=True
-    )
-    position: Mapped[int] = mapped_column(Integer)
+    position: Mapped[int] = mapped_column(Integer, primary_key=True)
+    kanji_character: Mapped[str] = mapped_column(ForeignKey("kanji.character"))
