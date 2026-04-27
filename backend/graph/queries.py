@@ -83,3 +83,38 @@ RETURN k.character AS character, c.position AS position
 ORDER BY c.position
 """
 
+# Bounded neighborhood for visualization (no APOC). Caller supplies allowed rel types + edge cap.
+SUBGRAPH_FROM_WORD = """
+MATCH (center:Word {id: $word_id})
+CALL (center) {
+  MATCH (center)-[r]-(n)
+  WHERE type(r) IN $allowed_types
+  WITH r, n
+  LIMIT $edge_limit
+  RETURN collect({r: r, n: n}) AS pairs
+}
+WITH center, pairs
+WITH center, CASE WHEN size(pairs) = 0 THEN [null] ELSE pairs END AS rows
+UNWIND rows AS pair
+RETURN center,
+       CASE WHEN pair IS NULL THEN null ELSE pair['r'] END AS r,
+       CASE WHEN pair IS NULL THEN null ELSE pair['n'] END AS n
+"""
+
+SUBGRAPH_FROM_KANJI = """
+MATCH (center:Kanji {character: $character})
+CALL (center) {
+  MATCH (center)-[r]-(n)
+  WHERE type(r) IN $allowed_types
+  WITH r, n
+  LIMIT $edge_limit
+  RETURN collect({r: r, n: n}) AS pairs
+}
+WITH center, pairs
+WITH center, CASE WHEN size(pairs) = 0 THEN [null] ELSE pairs END AS rows
+UNWIND rows AS pair
+RETURN center,
+       CASE WHEN pair IS NULL THEN null ELSE pair['r'] END AS r,
+       CASE WHEN pair IS NULL THEN null ELSE pair['n'] END AS n
+"""
+

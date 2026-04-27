@@ -28,7 +28,9 @@ class GraphClient:
             raise RuntimeError("Neo4j driver is not configured")
         with self._driver.session() as session:
             result = session.run(query, **params)
-            return [record.data() for record in result]
+            # Use record keys/values directly — record.data() converts graph types to
+            # plain dicts and drops Node/Relationship APIs needed by subgraph builders.
+            return [{key: record[key] for key in record.keys()} for record in result]
 
     def close(self) -> None:
         if self._driver is not None:
