@@ -1,15 +1,20 @@
 from __future__ import annotations
 
 import json
+import logging
 from pathlib import Path
 
 from sqlalchemy.orm import Session
 
 from backend.db.session import SessionLocal
+from backend.db.neo4j_session import driver as neo4j_driver
+from backend.graph import GraphClient
+from backend.graph.ingest import ensure_graph_schema, upsert_word_graph
 from backend.models import Word, Meaning, Tag, Kanji, WordKanji
 
 
 DATA_DIR = Path("./backend/data")  # folder with your JSON files
+LOGGER = logging.getLogger(__name__)
 
 
 # Helpers
@@ -85,7 +90,7 @@ def get_existing_word(session: Session, kanji: str, kana: str) -> Word | None:
 
 
 # Core Ingestion
-def ingest_file(session: Session, filepath: Path):
+def ingest_file(session: Session, filepath: Path, graph_client: GraphClient | None = None):
     with open(filepath, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -114,10 +119,13 @@ def ingest_file(session: Session, filepath: Path):
         session.flush()  # get word.id
 
         # Meanings
+        meanings = []
         for m in entry.get("meanings", []):
             session.add(Meaning(word_id=word.id, meaning=m))
+            meanings.append(m)
 
         # Tags
+        tag_names = []
         for badge in entry.get("badges", []):
             tag_name = badge.get("text")
             if not tag_name:
@@ -125,13 +133,16 @@ def ingest_file(session: Session, filepath: Path):
 
             tag = get_or_create_tag(session, tag_name)
             word.tags.append(tag)
+            tag_names.append(tag_name)
 
         # Kanji
+        kanji_chars: list[str] = []
         if contains_kanji(kanji_text):
             chars = extract_kanji_chars(kanji_text)
+            kanji_chars = chars
 
             for i, char in enumerate(chars):
-                k = get_or_create_kanji(session, char)
+                get_or_create_kanji(session, char)
 
                 session.add(
                     WordKanji(
@@ -141,12 +152,36 @@ def ingest_file(session: Session, filepath: Path):
                     )
                 )
 
+        if graph_client is not None:
+            kanji_lookup = {
+                k.character: {
+                    "meaning": k.meaning,
+                    "onyomi": k.onyomi or [],
+                    "kunyomi": k.kunyomi or [],
+                }
+                for k in session.query(Kanji).filter(Kanji.character.in_(kanji_chars)).all()
+            } if kanji_chars else {}
+            try:
+                upsert_word_graph(
+                    graph_client,
+                    word=word,
+                    meanings=meanings,
+                    tag_names=tag_names,
+                    kanji_chars=kanji_chars,
+                    kanji_lookup=kanji_lookup,
+                )
+            except Exception:
+                LOGGER.exception("Graph sync failed for word id=%s", word.id)
+
 
 # Entry Point
 def main():
     session = SessionLocal()
+    graph_client = GraphClient(neo4j_driver) if neo4j_driver is not None else None
 
     try:
+        if graph_client is not None:
+            ensure_graph_schema(graph_client)
         files = list(DATA_DIR.glob("*.json"))
 
         if not files:
@@ -155,7 +190,7 @@ def main():
 
         for file in files:
             print(f"Ingesting {file.name}...")
-            ingest_file(session, file)
+            ingest_file(session, file, graph_client=graph_client)
             session.commit()
 
         print("Ingestion complete.")
@@ -166,6 +201,8 @@ def main():
 
     finally:
         session.close()
+        if graph_client is not None:
+            graph_client.close()
 
 
 if __name__ == "__main__":

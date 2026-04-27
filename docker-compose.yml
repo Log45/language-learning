@@ -16,5 +16,18 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql
 
+  neo4j:
+    image: neo4j:5
+    container_name: language_app_neo4j
+    restart: always
+    environment:
+      NEO4J_AUTH: neo4j/password
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j_data:/data
+
 volumes:
   postgres_data:
+  neo4j_data:

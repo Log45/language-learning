@@ -24,3 +24,5 @@ uvicorn # uvicorn may or may not be necessary depending on deployment method
 psycopg2-binary
 sqlalchemy
 python-dotenv
+neo4j
+pytest
